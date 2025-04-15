@@ -1,0 +1,32 @@
+{
+    "navbar": {
+        "home": "Homepage",
+        "projects": "Projekte",
+        "certificates": "Bescheinigungen",
+        "education": "Bildung",
+        "title": "Portfolio",
+        "tooltips": {
+            "theme": "Thema ändern",
+            "language": "Sprache auswählen"
+        }
+    },
+    "footer": {
+      "copyright": "Alle Rechte vorbehalten."
+    },
+    "homePage": {
+        "title": "Homepage"
+    },
+    "projectsPage": {
+        "title": "Meine Projekte"
+    },
+    "educationPage": {
+        "title": "Meine Ausbildung"
+    },
+    "certPage": {
+        "title": "Meine Zertifikate"
+    },
+    "notFound": {
+        "message": "Huch! Sieht aus, als hätten Sie sich verlaufen 🫢",
+        "backToHome": "Zurück zur Titelseite"
+    }
+}

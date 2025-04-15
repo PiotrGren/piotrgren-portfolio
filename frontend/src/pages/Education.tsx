@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 export default function Education() {
+  const { t } = useTranslation()
+
   return(
     <AnimatePresence>
       <motion.div
@@ -10,7 +13,7 @@ export default function Education() {
         exit={{ opacity: 0}}
         className="page-wrapper"
       >
-        <h1 className="page-title">Wykształcenie</h1>
+        <h1 className="page-title">{t('educationPage.title')}</h1>
       </motion.div>
     </AnimatePresence>
   )

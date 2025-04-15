@@ -2,17 +2,22 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
+import LanguageSelector from './LanguageSelector'
 import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
+import { useTranslation } from 'react-i18next'
 
-const navItems = [
-    { name: 'Strona Główna', to: '/' },
-    { name: 'Projekty', to: '/projects' },
-    { name: 'Certyfikaty', to: '/certificates' },
-    { name: 'Edukacja', to: '/education' },
-]
 
 export default function Navbar() {
+    const { t } = useTranslation()
+
+    const navItems = [
+        { name: t('navbar.home'), to: '/' },
+        { name: t('navbar.projects'), to: '/projects' },
+        { name: t('navbar.certificates'), to: '/certificates' },
+        { name: t('navbar.education'), to: '/education' },
+    ]
+
     const [isOpen, setIsOpen] = useState(false)
     const [show, setShow] = useState(false)
 
@@ -34,7 +39,7 @@ export default function Navbar() {
                     >
                         <div className="navbar-inner">
                             <Link to="/" className="text-xl font-bold tracking-wide">
-                                Portfolio
+                                {t('navbar.title')}
                             </Link>
 
                             <nav className="navbar-nav">
@@ -51,11 +56,17 @@ export default function Navbar() {
                                         {name}
                                     </NavLink>
                                 ))}
-                                <ThemeToggle />
+                                <div className="flex items-center gap-1.5">
+                                    <ThemeToggle />
+                                    <LanguageSelector />
+                                </div>
                             </nav>
 
                             <div className="navbar-div">
-                                <ThemeToggle />
+                                <div className="flex items-center gap-1.5">
+                                    <ThemeToggle />
+                                    <LanguageSelector />
+                                </div>
                                 <button onClick={() => setIsOpen(true)}>
                                     <Menu size={24} /> {/*{isOpen ? <X size={24} /> : }*/}
                                 </button>
