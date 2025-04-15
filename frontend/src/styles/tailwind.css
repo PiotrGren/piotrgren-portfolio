@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './base.css';
+@import 'base.css';
 
 html {
     scroll-behavior: smooth;

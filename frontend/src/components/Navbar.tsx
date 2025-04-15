@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 import { motion, AnimatePresence } from 'framer-motion'
+import clsx from 'clsx'
 
 const navItems = [
     { name: 'Strona Główna', to: '/' },
@@ -23,63 +24,92 @@ export default function Navbar() {
     return (
         <AnimatePresence>
             {show && (
-                <motion.header
-                    initial={{y: -60, opacity: 0}}
-                    animate={{ y: 0, opacity: 1}}
-                    transition={{ duration: 0.3 }}
-                    className="navbar"
-                >
-                    <div className="navbar-inner">
-                        <Link to="/" className="text-xl font-bold tracking-wide">
-                            Portfolio
-                        </Link>
+                <>
+                    {/*Navbar */}
+                    <motion.header
+                        initial={{y: -60, opacity: 0}}
+                        animate={{ y: 0, opacity: 1}}
+                        transition={{ duration: 0.3 }}
+                        className="navbar"
+                    >
+                        <div className="navbar-inner">
+                            <Link to="/" className="text-xl font-bold tracking-wide">
+                                Portfolio
+                            </Link>
 
-                        <nav className="navbar-nav">
-                            {navItems.map(({ name, to }) => (
-                                <NavLink
-                                    key={to}
-                                    to={to}
-                                    className={({ isActive }) =>
-                                        `transition-colors hover:text-red-700 ${isActive ? 'text-red-900 font-semibold' : ''}`
-                                    }
-                                >
-                                    {name}
-                                </NavLink>
-                            ))}
-                            <ThemeToggle />
-                        </nav>
-
-                        <div className="navbar-div">
-                            <ThemeToggle />
-                            <button onClick={() => setIsOpen(!isOpen)}>
-                                {isOpen ? <X size={24} /> : <Menu size={24} />}
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Moblie Menu */}
-                    <AnimatePresence>
-                        {isOpen && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0}}
-                                animate={{ height: 'auto', opacity: 1}}
-                                exit={{ height: 0, opacity: 0}}
-                                className="navbar-mobile"
-                            >
-                                {navItems.map(({ name, to}) => (
+                            <nav className="navbar-nav">
+                                {navItems.map(({ name, to }) => (
                                     <NavLink
                                         key={to}
                                         to={to}
-                                        onClick={() => setIsOpen(false)}
-                                        className="navbar-mobile-navlink"
+                                        className={({ isActive }) =>
+                                            clsx(
+                                                `transition-colors hover:text-red-700 ${isActive ? 'text-red-900 font-semibold' : ''}`
+                                            )
+                                        }
                                     >
                                         {name}
                                     </NavLink>
                                 ))}
-                            </motion.div>
+                                <ThemeToggle />
+                            </nav>
+
+                            <div className="navbar-div">
+                                <ThemeToggle />
+                                <button onClick={() => setIsOpen(true)}>
+                                    <Menu size={24} /> {/*{isOpen ? <X size={24} /> : }*/}
+                                </button>
+                            </div>
+                        </div>
+                    </motion.header>
+
+                    {/* Moblie Menu - Overlay z blurrem*/}
+                    <AnimatePresence>
+                        {isOpen && (
+                            <>
+                                {/* Tło z blurrem */}
+                                <motion.div
+                                    initial={{ opacity: 0}}
+                                    animate={{ opacity: 1}}
+                                    exit={{ opacity: 0}}
+                                    className="navbar-mobile-blurr"
+                                    onClick={() => setIsOpen(false)}
+                                />
+
+                                {/* Panel boczny */}
+                                <motion.div
+                                    className="navbar-sidebar"
+                                    initial={{ x: '100%' }}
+                                    animate={{ x: 0 }}
+                                    exit={{ x: '100%' }}
+                                    transition={{ type: 'spring', stiffness: 260, damping: 25 }}
+                                >
+                                    <div className="flex justify-between items-center mb-4">
+                                        <span className="text-lg font-semibold">Menu</span>
+                                        <button onClick={() => setIsOpen(false)}>
+                                            <X size={24} />
+                                        </button>
+                                    </div>
+                                    {navItems.map(({ name, to}) => (
+                                        <NavLink
+                                            key={to}
+                                            to={to}
+                                            onClick={() => setIsOpen(false)}
+                                            className={({ isActive }) =>
+                                                clsx(
+                                                    'py-2 text-base transition-colors hover:text-red-700 border-zinc-200 dark:border-zinc-700',
+                                                    isActive && 'text-red-900 font-semibold'
+                                                )
+                                            }
+                                        >
+                                            {name}
+                                        </NavLink>
+                                    ))}
+                                </motion.div>
+                            </>
                         )}
                     </AnimatePresence>
-                </motion.header>
+                </>
             )}
         </AnimatePresence>
     )
