@@ -65,3 +65,63 @@ body {
 .themetoggle-button {
   @apply p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors;
 }
+
+
+/* Lista języków */
+.langList {
+  @apply absolute right-0 z-10 mt-2 w-16 bg-white dark:bg-zinc-800 border rounded shadow;
+}
+
+.langList-button {
+  @apply flex items-center w-full px-2 py-1 hover:bg-zinc-100 dark:hover:bg-zinc-700;
+}
+
+/* Style strony NotFound */
+@keyframes star {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+.animate-star {
+  animation: star 4s ease-in-out infinite;
+}
+
+@keyframes shiftGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.button-animated {
+  background: linear-gradient(90deg, #374151, #1f2937); /* domyślny */
+  transition: background 0.4s ease;
+}
+
+.button-animated:hover {
+  background: linear-gradient(90deg, #facc15, #f97316, #dc2626, #f97316, #facc15, #facc15, #f97316, #dc2626);
+  background-size: 400% 400%;
+  animation: shiftGradient 5s linear infinite;
+}
+
+
+@keyframes textGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-text-gradient {
+  background: linear-gradient(90deg, #facc15, #f97316, #dc2626, #f97316, #facc15);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textGradientMove 5s linear infinite;
+}
+

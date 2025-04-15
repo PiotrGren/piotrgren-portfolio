@@ -1,0 +1,32 @@
+{
+  "navbar": {
+      "home": "Home",
+      "projects": "Projects",
+      "certificates": "Certificates",
+      "education": "Education",
+      "title": "Portfolio",
+      "tooltips": {
+            "theme": "Change theme",
+            "language": "Select language"
+        }
+  },
+  "footer": {
+      "copyright": "All rights reserved."
+  },
+  "homePage": {
+      "title": "Home"
+  },
+  "projectsPage": {
+      "title": "My Projects"
+  },
+  "educationPage": {
+      "title": "My Education"
+  },
+  "certPage": {
+      "title": "My Certificates"
+  },
+  "notFound": {
+    "message": "Oops! Looks like you got lost 🫢",
+    "backToHome": "Back to homepage"
+  }
+}

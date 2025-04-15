@@ -1,0 +1,33 @@
+{
+    "navbar": {
+        "home": "Página de inicio",
+        "projects": "Proyectos",
+        "certificates": "Certificados",
+        "education": "Educación",
+        "title": "Cartera",
+        "tooltips": {
+            "theme": "Cambiar de tema",
+            "language": "Seleccionar idioma"
+        }
+    },
+    "footer": {
+      "copyright": "Todos los derechos reservados."
+    },
+    "homePage": {
+        "title": "Página de inicio"
+    },
+    "projectsPage": {
+        "title": "Mis proyectos"
+    },
+    "educationPage": {
+        "title": "Mi educación"
+    },
+    "certPage": {
+        "title": "Mis certificados"
+    },
+    "notFound": {
+        "message": "¡Uy! Parece que te has perdido 🫢",
+        "backToHome": "Volver a la portada"
+    }
+}
+  

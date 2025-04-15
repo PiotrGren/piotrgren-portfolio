@@ -17,6 +17,7 @@ function App() {
 
   return (
     <Routes>
+      {/* Strony z layoutem */}
       <Route element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
@@ -25,8 +26,10 @@ function App() {
         <Route path="/certificates/:id" element={<CertificateDetail />} />
         <Route path="/education" element={<Education />} />
         <Route path="/education/thesis" element={<Thesis />} />
-        <Route path="*" element={<NotFound />} />
       </Route>
+
+      {/* 404 - bez layoutu */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
