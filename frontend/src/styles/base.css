@@ -7,7 +7,12 @@ html {
 body {
   @apply font-sans bg-white text-black dark:bg-zinc-900 dark:text-white;
 }
-  
+
+/* Main Layout */
+.main-layout {
+  @apply min-h-screen bg-white text-black dark:bg-zinc-900 dark:text-white flex flex-col pt-16;
+}
+
 /* Nagłówki stron */
 .page-title {
   @apply text-7xl font-bold text-left pb-4;
@@ -27,8 +32,28 @@ body {
   @apply max-w-7xl mx-auto px-4 py-3 flex justify-between items-center;
 }
   
+.navbar-nav {
+  @apply hidden md:flex gap-6 items-center;
+}
+
+.navbar-div {
+  @apply md:hidden flex items-center gap-2;
+}
+
+.navbar-mobile {
+  @apply md:hidden px-4 pb-4 flex flex-col gap-3 bg-white dark:bg-zinc-900;
+}
+
+.navbar-mobile-navlink {
+  @apply py-1 text-lg border-b border-zinc-200 dark:border-zinc-700;
+}
+
 /* Footer */
 .footer {
   @apply bg-zinc-100 dark:bg-zinc-800 py-6 text-center mt-12 text-sm text-zinc-500 dark:text-zinc-400;
 }
-  
+
+/* Theme Toggle */
+.themetoggle-button {
+  @apply p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors;
+}

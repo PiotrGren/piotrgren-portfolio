@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export default function DefaultLayout () {
     return (
-        <div className="min-h-screen bg-white text-black dark:bg-zinc-900 dark:text-white flex flex-col pt-16">
+        <div className="main-layout">
             {/* Navbar, ChatWidget będą tu wstawione itd. */}
             <Navbar />
             <main className="px-4 py-6">

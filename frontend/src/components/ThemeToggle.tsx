@@ -8,7 +8,7 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+            className="themetoggle-button"
         >
             <motion.div
                 key={theme}
