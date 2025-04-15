@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './base.css';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply font-sans bg-white text-black dark:bg-zinc-900 dark:text-white; /*transition-colors ease-in-out*/
+}
