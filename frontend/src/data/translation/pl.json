@@ -42,5 +42,9 @@
     },
     "thesisPage": {
         "title": "Prace Dyplomowe"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "copied": "Skopiowano adres e-mail!"
     }
 }

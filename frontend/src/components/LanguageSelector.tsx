@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from 'framer-motion'
 import TooltipWrapper from './TooltipWrapper'
@@ -20,6 +20,19 @@ export default function LanguageSelector () {
 
     const current = languages.find(lang => lang.code === i18n.language) || languages[0]
 
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
     return (
         <div className="relative ml-1 overflow-visible">
             <TooltipWrapper label={t('navbar.tooltips.language')}>
@@ -37,6 +50,7 @@ export default function LanguageSelector () {
                 {open && (
                         <motion.div
                             className="langList"
+                            ref={dropdownRef}
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}

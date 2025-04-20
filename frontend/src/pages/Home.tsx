@@ -3,11 +3,27 @@ import { useTranslation } from 'react-i18next'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { FiExternalLink, FiDownload, FiEye, FiChevronDown } from 'react-icons/fi'
 import profile from "../assets/pictures/profile.jpg"
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import ContactDialog from "../components/ContactDialog";
 
 export default function Home() {
   const { t } = useTranslation()
   const [cvOpen, setCVOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+
+  const cvRef = useRef<HTMLDivElement>(null);
+
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (cvRef.current && !cvRef.current.contains(event.target as Node)) {
+        setCVOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
     return(
       <div className="homepage-maindiv">
@@ -69,13 +85,13 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-4 mt-4"
           >
             {/* Kontakt */}
-            <button className="home-contactbutton">
+            <button className="home-contactbutton" onClick={() => setContactOpen(true)}>
               {t("homePage.buttons.contact")}
               <FiExternalLink size={14} />
             </button>
 
             {/* Moje CV - Dropdown */}
-            <div className="relative">
+            <div className="relative" ref={cvRef}>
               <button
                 onClick={() => setCVOpen(!cvOpen)}
                 className="home-cvbutton"
@@ -97,10 +113,10 @@ export default function Home() {
                   className="cv-dropdown"
                 >
                   <button className="viewcv-button">
-                    <span className="whitespace-nowrap">{t("homePage.buttons.viewcv")} <FiEye size={14} className="shrink-0" /></span>
+                    {t("homePage.buttons.viewcv")} {/*<FiEye size={14} className="mt-auto mb-auto" />*/}
                   </button>
                   <button className="downloadcv-button">
-                    <span className="whitespace-nowrap">{t("homePage.buttons.downloadcv")} <FiDownload size={14} className="shrink-0" /></span>
+                    {t("homePage.buttons.downloadcv")} {/*<FiDownload size={14} className="mt-auto mb-auto" />*/}
                   </button>
                 </motion.div>
               )}
@@ -108,7 +124,7 @@ export default function Home() {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/piotr-gren/</div>"
+              href="https://www.linkedin.com/in/piotr-gren"
               target="_blank"
               rel="noopener noreferrer"
               className="linkedin-button"
@@ -127,7 +143,7 @@ export default function Home() {
             </a>
           </motion.div>
         </motion.div>
+        <ContactDialog isOpen={contactOpen} onClose={() => setContactOpen(false)} />
       </div>
     );
   }
-  

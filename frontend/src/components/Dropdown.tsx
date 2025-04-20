@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -21,8 +21,21 @@ export default function Dropdown({ title, items }: DropdownProps) {
     const location = useLocation();
     const isActive = items.some(item => location.pathname.startsWith(item.to));
 
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
     return (
-        <div className="relative inline-block">
+        <div ref={dropdownRef} className="relative inline-block">
             <button
                 onClick={() => setOpen(!open)}
                 className={clsx(

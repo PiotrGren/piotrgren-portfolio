@@ -42,5 +42,9 @@
   },
   "thesisPage": {
       "title": "Diploma theses"
+  },
+  "contact": {
+    "title": "Contact",
+    "copied": "E-mail copied to clipboard!"
   }
 }
