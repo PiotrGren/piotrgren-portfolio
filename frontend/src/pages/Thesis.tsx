@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 export default function Thesis() {
+  const { t } = useTranslation();
+
   return(
     <AnimatePresence>
       <motion.div
@@ -10,7 +13,7 @@ export default function Thesis() {
         exit={{ opacity: 0}}
         className="page-wrapper"
       >
-        <h1 className="page-title">Praca Inżynierska</h1>
+        <h1 className="page-title">{t("thesisPage.title")}</h1>
       </motion.div>
     </AnimatePresence>
   )

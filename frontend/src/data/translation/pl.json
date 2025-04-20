@@ -3,8 +3,12 @@
         "home": "Strona Główna",
         "projects": "Projekty",
         "certificates": "Certyfikaty",
-        "education": "Edukacja",
-        "title": "Portfolio",
+        "educationMenu": {
+            "title": "Wykształcenie",
+            "education": "Edukacja",
+            "thesis": "Prace Dyplomowe"
+        },
+        "title": "Piotr Greń",
         "tooltips": {
             "theme": "Zmień motyw",
             "language": "Wybierz język"
@@ -14,7 +18,14 @@
         "copyright": "Wszelkie prawa zastrzeżone."
     },
     "homePage": {
-        "title": "Strona Główna"
+        "title": "Strona Główna",
+        "greeting": "Cześć, jestem",
+        "buttons": {
+            "contact": "Kontakt",
+            "mcv": "Moje CV",
+            "viewcv": "Pogląd",
+            "downloadcv": "Pobierz"
+        }
     },
     "projectsPage": {
         "title": "Moje Projekty"
@@ -28,5 +39,8 @@
     "notFound": {
         "message": "Ups! Wygląda na to, że się zgubiłeś 🫢",
         "backToHome": "Wróć na stronę główną"
+    },
+    "thesisPage": {
+        "title": "Prace Dyplomowe"
     }
 }

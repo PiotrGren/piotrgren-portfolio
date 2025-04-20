@@ -3,8 +3,12 @@
         "home": "Homepage",
         "projects": "Progetti",
         "certificates": "Certificati",
-        "education": "Istruzione",
-        "title": "Portafoglio",
+        "educationMenu": {
+            "title": "Istruzione",
+            "education": "Educazione",
+            "thesis": "Tesi di diploma"
+        },
+        "title": "Piotr Greń",
         "tooltips": {
             "theme": "Cambia tema",
             "language": "Selezionare la lingua"
@@ -14,7 +18,14 @@
       "copyright": "Tutti i diritti riservati."
     },
     "homePage": {
-        "title": "Homepage"
+        "title": "Homepage",
+        "greeting": "Ciao, sono",
+        "buttons": {
+            "contact": "Contatto",
+            "mcv": "Il mio CV",
+            "viewcv": "Visualizzazione",
+            "downloadcv": "Scaricamento"
+        }
     },
     "projectsPage": {
         "title": "I miei progetti"
@@ -28,5 +39,8 @@
     "notFound": {
         "message": "Oops! Sembra che ti sia perso 🫢",
         "backToHome": "Torna alla prima pagina"
+    },
+    "thesisPage": {
+        "title": "Tesi di diploma"
     }
 }

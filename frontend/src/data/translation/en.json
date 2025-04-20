@@ -3,8 +3,12 @@
       "home": "Home",
       "projects": "Projects",
       "certificates": "Certificates",
-      "education": "Education",
-      "title": "Portfolio",
+      "educationMenu": {
+            "title": "Education",
+            "education": "Education",
+            "thesis": "Diploma theses"
+        },
+      "title": "Piotr Greń",
       "tooltips": {
             "theme": "Change theme",
             "language": "Select language"
@@ -14,7 +18,14 @@
       "copyright": "All rights reserved."
   },
   "homePage": {
-      "title": "Home"
+      "title": "Home",
+      "greeting": "Hello, I'm",
+      "buttons": {
+          "contact": "Contact",
+          "mcv": "My CV",
+          "viewcv": "View",
+          "downloadcv": "Download"
+      }
   },
   "projectsPage": {
       "title": "My Projects"
@@ -28,5 +39,8 @@
   "notFound": {
     "message": "Oops! Looks like you got lost 🫢",
     "backToHome": "Back to homepage"
+  },
+  "thesisPage": {
+      "title": "Diploma theses"
   }
 }

@@ -3,8 +3,12 @@
         "home": "Homepage",
         "projects": "Projekte",
         "certificates": "Bescheinigungen",
-        "education": "Bildung",
-        "title": "Portfolio",
+        "educationMenu": {
+            "title": "Bildung",
+            "education": "Bildung",
+            "thesis": "Diplomarbeiten"
+        },
+        "title": "Piotr Greń",
         "tooltips": {
             "theme": "Thema ändern",
             "language": "Sprache auswählen"
@@ -14,7 +18,14 @@
       "copyright": "Alle Rechte vorbehalten."
     },
     "homePage": {
-        "title": "Homepage"
+        "title": "Homepage",
+        "greeting": "Hallo, ich bin",
+        "buttons": {
+            "contact": "Kontakt",
+            "mcv": "Mein Lebenslauf",
+            "viewcv": "Sicht",
+            "downloadcv": "Herunterladen"
+        }
     },
     "projectsPage": {
         "title": "Meine Projekte"
@@ -28,5 +39,8 @@
     "notFound": {
         "message": "Huch! Sieht aus, als hätten Sie sich verlaufen 🫢",
         "backToHome": "Zurück zur Titelseite"
+    },
+    "thesisPage": {
+        "title": "Diplomarbeiten"
     }
 }

@@ -6,6 +6,7 @@ import LanguageSelector from './LanguageSelector'
 import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
+import Dropdown from './Dropdown'
 
 
 export default function Navbar() {
@@ -15,7 +16,6 @@ export default function Navbar() {
         { name: t('navbar.home'), to: '/' },
         { name: t('navbar.projects'), to: '/projects' },
         { name: t('navbar.certificates'), to: '/certificates' },
-        { name: t('navbar.education'), to: '/education' },
     ]
 
     const [isOpen, setIsOpen] = useState(false)
@@ -56,6 +56,13 @@ export default function Navbar() {
                                         {name}
                                     </NavLink>
                                 ))}
+                                <Dropdown
+                                    title={t('navbar.educationMenu.title')}
+                                    items={[
+                                        { label: t('navbar.educationMenu.education'), to: "/education"},
+                                        { label: t("navbar.educationMenu.thesis"), to: "/education/thesis"}
+                                    ]}
+                                />
                                 <div className="flex items-center gap-1.5">
                                     <ThemeToggle />
                                     <LanguageSelector />
