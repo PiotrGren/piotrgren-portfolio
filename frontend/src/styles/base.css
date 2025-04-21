@@ -173,10 +173,6 @@ body {
   @apply px-5 py-1.5 text-sm bg-zinc-900 text-white rounded-full flex items-center gap-2 hover:bg-zinc-700 transition shadow-md;
 }
 
-.about-dialog {
-  @apply w-[90%] max-w-xl h-[auto] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 px-6 pt-6 pb-8 shadow-xl;
-}
-
 .about-background {
   @apply absolute inset-0 opacity-10 flex justify-end items-center pr-6 pointer-events-none;
 }
