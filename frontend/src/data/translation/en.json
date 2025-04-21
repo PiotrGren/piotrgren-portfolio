@@ -45,6 +45,13 @@
   },
   "contact": {
     "title": "Contact",
-    "copied": "E-mail copied to clipboard!"
+    "copied": "E-mail copied to clipboard!",
+    "country": "Poland"
+  },
+  "about": {
+      "title": "This project",
+      "link": "About this project",
+      "description": "This project is a personal portfolio created using modern frontend, backend, AI and containerization technologies.",
+      "contenerization": "Containerization"
   }
 }

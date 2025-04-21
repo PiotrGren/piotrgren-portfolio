@@ -45,6 +45,13 @@
     },
     "contact": {
         "title": "Kontakt",
-        "copied": "Skopiowano adres e-mail!"
+        "copied": "Skopiowano adres e-mail!",
+        "country": "Polska"
+    },
+    "about": {
+        "title": "Ten projekt",
+        "link": "O tym projekcie",
+        "description": "Ten projekt to osobiste portfolio stworzone z użyciem nowoczesnych technologii frontendowych, backendowych, AI oraz konteneryzacji.",
+        "contenerization": "Konteneryzacja"
     }
 }

@@ -42,5 +42,16 @@
     },
     "thesisPage": {
         "title": "Diplomarbeiten"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "copied": "E-Mail in die Zwischenablage kopiert!",
+        "country": "Polen"
+    },
+    "about": {
+        "title": "Dieses Projekt",
+        "link": "Über dieses Projekt",
+        "description": "Dieses Projekt ist ein persönliches Portfolio, das mit modernen Frontend-, Backend-, KI- und Containerisierungstechnologien erstellt wurde.",
+        "contenerization": "Containerisierung"
     }
 }

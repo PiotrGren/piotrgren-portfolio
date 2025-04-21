@@ -26,6 +26,17 @@ export default function Navbar() {
         return () => clearTimeout(timer)
     }, [])
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setIsOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <AnimatePresence>
             {show && (
@@ -62,6 +73,7 @@ export default function Navbar() {
                                         { label: t('navbar.educationMenu.education'), to: "/education"},
                                         { label: t("navbar.educationMenu.thesis"), to: "/education/thesis"}
                                     ]}
+                                    onNavClose={() => setIsOpen(false)}
                                 />
                                 <div className="flex items-center gap-1.5">
                                     <ThemeToggle />
@@ -123,6 +135,14 @@ export default function Navbar() {
                                             {name}
                                         </NavLink>
                                     ))}
+                                    <Dropdown
+                                    title={t('navbar.educationMenu.title')}
+                                    items={[
+                                        { label: t('navbar.educationMenu.education'), to: "/education"},
+                                        { label: t("navbar.educationMenu.thesis"), to: "/education/thesis"}
+                                    ]}
+                                    onNavClose={() => setIsOpen(false)}
+                                />
                                 </motion.div>
                             </>
                         )}

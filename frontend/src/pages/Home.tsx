@@ -39,13 +39,13 @@ export default function Home() {
             alt="Profile Picture"
             className="profilepic"
           />
-          {/* Fala */}
+          {/* Fala 
           <img
             src="https://www.svgrepo.com/show/370968/wave-bottom.svg"
             alt="dekoracja"
             className="absolute bottom-0 left-0 w-full opacity-30 animate-fade-in"
           />
-          {/*<div className="profilepic-effect" />*/}
+          <div className="profilepic-effect" />*/}
         </motion.div>
 
         {/* Prawa strona: Tekst i przyciski */}

@@ -58,7 +58,7 @@ body {
 
 /* Footer */
 .footer {
-  @apply bg-zinc-100 dark:bg-zinc-800 py-6 text-center mt-12 text-sm text-zinc-500 dark:text-zinc-400;
+  @apply flex justify-between items-center bg-zinc-100 dark:bg-zinc-800 px-4 py-6 text-center mt-12 text-sm text-zinc-500 dark:text-zinc-400;
 }
 
 /* Theme Toggle */
@@ -126,11 +126,11 @@ body {
 }
 
 .homepage-maindiv {
-  @apply w-full pt-12 md:pt-4 flex flex-col md:flex-row items-center justify-center gap-40 md:gap-32 px-6 sm:px-10;
+  @apply w-full pt-6 md:pt-4 flex flex-col md:flex-row items-center justify-center gap-20 md:gap-40 px-6 sm:px-10;
 }
 
 .profilepic-div {
-  @apply relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.2)];
+  @apply relative w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.2)] border-2 border-white dark:border-zinc-700;
 }
 
 .profilepic {
@@ -172,3 +172,16 @@ body {
 .github-button {
   @apply px-5 py-1.5 text-sm bg-zinc-900 text-white rounded-full flex items-center gap-2 hover:bg-zinc-700 transition shadow-md;
 }
+
+.about-dialog {
+  @apply w-[90%] max-w-xl h-[auto] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 px-6 pt-6 pb-8 shadow-xl;
+}
+
+.about-background {
+  @apply absolute inset-0 opacity-10 flex justify-end items-center pr-6 pointer-events-none;
+}
+
+.about-close {
+  @apply absolute top-3 right-3 text-zinc-500 hover:text-red-600 transition;
+}
+

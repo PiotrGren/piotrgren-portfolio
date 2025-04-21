@@ -13,11 +13,11 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
   const [copied, setCopied] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const email = "piotr.gren@example.com";
-  const phone = "+48 123 456 789";
-  const location = "Rzeszów, Polska";
+  const email = "piotr.gren02@gmail.com";
+  const email2 = "piotrek.gren2002@gmail.com"
+  const phone = "+48 725 871 175";
+  const location = "35-077 Rzeszów, " + t("contact.country");
 
-  // Zamykanie przy kliknięciu poza komponent
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -30,7 +30,6 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
 
-  // Automatyczne chowanie powiadomienia o skopiowaniu
   useEffect(() => {
     if (copied) {
       const timer = setTimeout(() => setCopied(false), 2500);
@@ -62,10 +61,10 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="fixed z-50 top-1/2 left-1/2 w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 p-6 shadow-xl"
+            className="fixed z-50 top-1/3 left-2/5 w-[90%] h-[40%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 px-6 pt-6 pb-8 shadow-xl flex flex-col justify-start"
           >
             {/* Ikonka w tle */}
-            <div className="absolute inset-0 opacity-10 flex justify-center items-center pointer-events-none">
+            <div className="absolute inset-0 opacity-10 flex justify-end items-center pr-4 pt-10 pointer-events-none">
               <FiBook size={160} />
             </div>
 
@@ -74,13 +73,19 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
               <FiX size={20} />
             </button>
 
-            <h2 className="text-xl font-bold mb-4 relative z-10">{t("contact.title") || "Kontakt"}</h2>
+            <h2 className="text-2xl font-bold mb-8 relative z-10">{t("contact.title") || "Kontakt"}</h2>
 
-            <ul className="space-y-4 relative z-10">
+            <ul className="space-y-6 relative z-10">
               <li className="flex items-center gap-3">
                 <FiMail size={18} />
                 <button onClick={handleEmailCopy} className="text-sm text-left hover:underline">
                   {email}
+                </button>
+              </li>
+              <li className="flex items-center gap-3">
+                <FiMail size={18} />
+                <button onClick={handleEmailCopy} className="text-sm text-left hover:underline">
+                  {email2}
                 </button>
               </li>
               <li className="flex items-center gap-3">
@@ -89,7 +94,14 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
               </li>
               <li className="flex items-center gap-3">
                 <FiMapPin size={18} />
-                <span className="text-sm">{location}</span>
+                <a
+                  href="https://www.google.pl/maps/place/Rzeszów/@50.0187723,21.8334863,11z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:underline"
+                >
+                  {location}
+                </a>
               </li>
             </ul>
           </motion.div>
@@ -102,7 +114,7 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
-                className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-zinc-800 text-white px-4 py-2 rounded-md shadow-md z-50 text-sm"
+                className="fixed bottom-4 left-2/5 -translate-x-1/2 bg-zinc-800 text-white px-4 py-2 rounded-md shadow-md z-50 text-sm"
               >
                 {t("contact.copied") || "Skopiowano adres e-mail!"}
               </motion.div>

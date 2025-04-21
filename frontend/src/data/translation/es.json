@@ -42,6 +42,17 @@
     },
     "thesisPage": {
         "title": "Tesis de diploma"
+    },
+    "contact": {
+      "title": "Contacto",
+      "copied": "¡Correo electrónico copiado al portapapeles!",
+      "country": "Polonia"
+    },
+    "about": {
+        "title": "Este proyecto",
+        "link": "Acerca de este proyecto",
+        "description": "Este proyecto es una cartera personal creada utilizando tecnologías modernas de frontend, backend, IA y contenedorización.",
+        "contenerization": "Containerización"
     }
 }
   

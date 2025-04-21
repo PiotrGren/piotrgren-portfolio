@@ -42,5 +42,16 @@
     },
     "thesisPage": {
         "title": "Tesi di diploma"
+    },
+    "contact": {
+      "title": "Contatto",
+      "copied": "E-mail copiata negli appunti!",
+      "country": "Polonia"
+    },
+    "about": {
+        "title": "Questo progetto",
+        "link": "Informazioni su questo progetto",
+        "description": "Questo progetto è un portfolio personale creato utilizzando moderne tecnologie di frontend, backend, AI e containerizzazione.",
+        "contenerization": "Containerizzazione"
     }
 }
