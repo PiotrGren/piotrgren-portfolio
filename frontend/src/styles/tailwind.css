@@ -8,5 +8,5 @@ html {
 }
 
 body {
-    @apply font-sans bg-white text-black dark:bg-zinc-900 dark:text-white; /*transition-colors ease-in-out*/
+    @apply font-sans bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100; /*transition-colors ease-in-out*/
 }
