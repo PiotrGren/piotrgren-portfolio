@@ -74,7 +74,6 @@ export default function Dropdown({ title, items }: DropdownProps) {
                                     to={to}
                                     onClick={() => {
                                         setOpen(false)
-                                        onNavClose?.();
                                     }}
                                     className="text-sm py-2 w-full border-b border-zinc-300 dark:border-zinc-700 last:border-0 transition-colors hover:text-red-700"
                                 >

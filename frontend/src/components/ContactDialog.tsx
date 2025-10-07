@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMail, FiPhone, FiMapPin, FiX, FiCopy, FiBook } from "react-icons/fi";
+import { FiMail, FiPhone, FiMapPin, FiX, FiBook } from "react-icons/fi";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 

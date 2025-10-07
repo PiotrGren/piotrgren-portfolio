@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FiX, FiTerminal } from "react-icons/fi";
-import { SiVite, SiReact, SiTypescript, SiTailwindcss, SiFlask, SiSqlite, SiDocker, SiMeta } from "react-icons/si";
+import { FiX } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { useRef, useEffect } from "react";
 
