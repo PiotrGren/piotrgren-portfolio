@@ -17,10 +17,8 @@ export default function NotFound() {
         {/* Tło */}
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-cover bg-center brightness-[.5]"
-            style={{
-              backgroundImage: `url(https://images.unsplash.com/photo-1607348407497-27b89c2b0237?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
-            }}
+            className="absolute inset-0 bg-zinc-900"
+            
           />
           {/* Gwiazdy */}
           <div className="absolute inset-0 z-10">

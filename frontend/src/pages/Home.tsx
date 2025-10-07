@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
-import { FiExternalLink, FiDownload, FiEye, FiChevronDown } from 'react-icons/fi'
+import { FiExternalLink, FiChevronDown } from 'react-icons/fi'
 import profile from "../assets/pictures/profile.jpg"
 import { useState, useEffect, useRef } from 'react'
 import ContactDialog from "../components/ContactDialog";

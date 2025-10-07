@@ -1,0 +1,33 @@
+# env / sekrety
+.env
+.env.*
+
+# node / react
+node_modules/
+dist/
+build/
+*.log
+
+# python / django
+.venv/
+venv/
+__pycache__/
+*.pyc
+media/
+staticfiles/
+
+# docker / db
+db/
+docker-data/
+**/mysql-data/
+**/postgres-data/
+*.sock
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# vercel / next
+.vercel/
+.next/

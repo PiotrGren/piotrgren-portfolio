@@ -5,12 +5,12 @@ html {
 }
   
 body {
-  @apply font-sans bg-white text-black dark:bg-zinc-900 dark:text-white;
+  @apply font-sans bg-zinc-200 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-200;
 }
 
 /* Main Layout */
 .main-layout {
-  @apply min-h-screen bg-white text-black dark:bg-zinc-900 dark:text-white flex flex-col pt-16;
+  @apply min-h-screen bg-zinc-200 text-zinc-900 dark:bg-zinc-900 dark:text-white flex flex-col pt-16;
 }
 
 /* Nagłówki stron */
@@ -25,7 +25,7 @@ body {
   
 /* Nawigacja główna */
 .navbar {
-  @apply fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-md;
+  @apply fixed top-0 left-0 w-full z-50 bg-zinc-100/80 dark:bg-zinc-800/40 backdrop-blur-md shadow-md;
 }
   
 .navbar-inner {
@@ -101,7 +101,7 @@ body {
 }
 
 .button-animated:hover {
-  background: linear-gradient(90deg, #facc15, #f97316, #dc2626, #f97316, #facc15, #facc15, #f97316, #dc2626);
+  background: linear-gradient(150deg, oklch(70.4% 0.191 22.216), oklch(50.5% 0.213 27.518), oklch(39.6% 0.141 25.723), oklch(50.5% 0.213 27.518), oklch(70.4% 0.191 22.216), oklch(70.4% 0.191 22.216), oklch(50.5% 0.213 27.518), oklch(39.6% 0.141 25.723), oklch(50.5% 0.213 27.518), oklch(70.4% 0.191 22.216));
   background-size: 400% 400%;
   animation: shiftGradient 5s linear infinite;
 }
@@ -117,7 +117,8 @@ body {
 }
 
 .animate-text-gradient {
-  background: linear-gradient(90deg, #facc15, #f97316, #dc2626, #f97316, #facc15);
+  /*background: linear-gradient(90deg, #facc15, #f97316, #dc2626, #f97316, #facc15);*/
+  background: linear-gradient(30deg, oklch(70.4% 0.191 22.216), oklch(57.7% 0.245 27.325), oklch(39.6% 0.141 25.723), oklch(57.7% 0.245 27.325), oklch(70.4% 0.191 22.216));
   background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
