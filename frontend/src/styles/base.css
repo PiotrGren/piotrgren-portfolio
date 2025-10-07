@@ -15,7 +15,7 @@ body {
 
 /* Nagłówki stron */
 .page-title {
-  @apply sm:text-2xl text-7xl font-bold text-left pb-4;
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-left pb-4;
 }
   
 /* Kontener strony */
