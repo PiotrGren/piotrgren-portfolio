@@ -20,7 +20,7 @@ body {
   
 /* Kontener strony */
 .page-wrapper {
-  @apply px-1 pb-4 flex flex-col gap-3 bg-white dark:bg-zinc-900;
+  @apply px-1 pb-4 flex flex-col gap-3 bg-zinc-200 dark:bg-zinc-900;
 }
   
 /* Nawigacja główna */
