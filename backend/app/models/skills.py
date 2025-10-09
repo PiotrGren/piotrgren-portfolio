@@ -1,5 +1,5 @@
 from app import db
-from associations import cert_tech_map, exp_tech_map
+from associations import cert_tech_map, exp_tech_map, proj_tech_map
 
 
 class TimestampMixin:
@@ -35,5 +35,6 @@ class Technology(TimestampMixin, db.Model):
     category = db.relationship("TechCategory", back_populates="technologies")
     certificates = db.relationship("Certificate", secondary=cert_tech_map, back_populates="technologies")
     experiences = db.relationship("Experience", secondary=exp_tech_map, back_populates="technologies")
+    projects = db.relationship('Project', secondary=proj_tech_map, back_populates='technologies')
 
     __table_args__ = ({"mysql_charset": "utf8mb4"},)

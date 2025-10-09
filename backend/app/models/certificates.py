@@ -49,7 +49,7 @@ class Certificate(TimestampMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     cert_id = db.Column(db.String(255), unique=True, nullable=True)
-    program_id = db.Column(db.Integer, db.ForeignKey("course.id", ondelete="SET NULL"), nullable=True, index=True)
+    program_id = db.Column(db.Integer, db.ForeignKey("course.id", ondelete="RESTRICT"), nullable=True, index=True)
     title = db.Column(db.String(255), nullable=False)
     issued_on = db.Column(db.Date, nullable=False, index=True)
     verification_url = db.Column(db.String(512), unique=True, nullable=True)
@@ -65,5 +65,6 @@ class Certificate(TimestampMixin, db.Model):
 
     __table_args__ = (
         db.UniqueConstraint("program_id", "title", name="uq_certificate_program_title"),
+        db.CheckConstraint("(score IS NULL) OR (score BETWEEN 0 AND 100)", name="chk_certificate_score_0_100"),
         {"mysql_charset": "utf8mb4"},
     )

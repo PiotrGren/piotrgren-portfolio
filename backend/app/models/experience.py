@@ -48,5 +48,9 @@ class Experience(TimestampMixin, db.Model):
 
     __table_args__ = (
         db.Index("ix_experience_dates", "start_date", "end_date"),
+        db.CheckConstraint(
+            "(end_date IS NULL) OR (start_date <= end_date)",
+            name="chk_experience_dates_order"
+        ),
         {"mysql_charset": "utf8mb4"},
     )
