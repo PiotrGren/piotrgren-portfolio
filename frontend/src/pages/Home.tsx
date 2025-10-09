@@ -85,7 +85,7 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-4 mt-4"
           >
             {/* Kontakt */}
-            <button className="home-contactbutton" onClick={() => setContactOpen(true)}>
+            <button className="home-contactbutton" onClick={() => {setContactOpen(true); document.body.style.overflow = "hidden"}}>
               {t("homePage.buttons.contact")}
               <FiExternalLink size={14} />
             </button>
@@ -143,7 +143,7 @@ export default function Home() {
             </a>
           </motion.div>
         </motion.div>
-        <ContactDialog isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+        <ContactDialog isOpen={contactOpen} onClose={() => {setContactOpen(false); document.body.style.overflow = "auto"}} />
       </div>
     );
   }

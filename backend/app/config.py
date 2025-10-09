@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY = os.getenv("FLASK_SECRET_KEY", "dev-secret")
-    SQLALCHEMY_TRAKC_MODIFICATIONS = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     TZ = os.getenv("TZ", "Europe/Warsaw")
     
     DB_ENGINE = os.getenv("DB_ENGINE", "mysql")

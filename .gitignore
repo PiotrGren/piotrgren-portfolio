@@ -31,3 +31,7 @@ docker-data/
 # vercel / next
 .vercel/
 .next/
+
+
+# other
+zfuture_assets/

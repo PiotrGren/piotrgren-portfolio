@@ -80,8 +80,8 @@ export default function AboutProjectDialog({ isOpen, onClose }: Props) {
                             <div>
                                 <h3 className="font-semibold mb-2">Backend</h3>
                                 <div className="flex flex-wrap justify-center gap-4">
-                                    <TechIcon icon={<img src="https://cdn.simpleicons.org/flask/000000" alt="Flask" className="w-8 h-8" />} name="Flask" link="https://flask.palletsprojects.com/" />
-                                    <TechIcon icon={<img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="SQLite" className="w-8 h-8" />} name="SQLite" link="https://sqlite.org/" />
+                                    <TechIcon icon={<img src="https://icon.icepanel.io/Technology/png-shadow-512/Flask.png" alt="Flask" className="w-8 h-8" />} name="Flask" link="https://flask.palletsprojects.com/" />
+                                    <TechIcon icon={<img src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg" alt="MySQL" className="w-8 h-8" />} name="MySQL" link="https://www.mysql.com/" />
                                     <TechIcon icon={<img src="https://images.seeklogo.com/logo-png/42/2/meta-icon-new-facebook-2021-logo-png_seeklogo-424014.png" alt="Meta" className="w-8 h-8" />} name="Meta Llama" link="https://ai.meta.com/llama/" />
                                 </div>
                             </div>

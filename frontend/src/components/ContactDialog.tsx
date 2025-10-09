@@ -18,6 +18,13 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
   const phone = "+48 725 871 175";
   const location = "35-077 Rzeszów, " + t("contact.country");
 
+  //useEffect(() => {
+  //  document.body.style.overflow = "hidden";
+  //  return () => {
+  //    document.body.style.overflow = "auto";
+  //  };
+  //}, [])
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -37,8 +44,8 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
     }
   }, [copied]);
 
-  const handleEmailCopy = () => {
-    navigator.clipboard.writeText(email);
+  function handleEmailCopy(selectedEmail: string) {
+    navigator.clipboard.writeText(selectedEmail);
     setCopied(true);
   };
 
@@ -51,7 +58,7 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.4 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black z-40 backdrop-blur-sm"
+            className="fixed inset-0 z-50 backdrop-blur-xl bg-black/40"
           />
 
           {/* Okno dialogowe */}
@@ -61,7 +68,7 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="fixed z-50 top-1/3 left-2/5 w-[90%] h-[40%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 px-6 pt-6 pb-8 shadow-xl flex flex-col justify-start"
+            className="fixed z-50 top-1/3 left-2/5 w-[90%] h-[18rem] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 px-6 pt-6 pb-8 shadow-xl flex flex-col justify-start"
           >
             {/* Ikonka w tle */}
             <div className="absolute inset-0 opacity-10 flex justify-end items-center pr-4 pt-10 pointer-events-none">
@@ -78,13 +85,13 @@ export default function ContactDialog({ isOpen, onClose }: Props) {
             <ul className="space-y-6 relative z-10">
               <li className="flex items-center gap-3">
                 <FiMail size={18} />
-                <button onClick={handleEmailCopy} className="text-sm text-left hover:underline">
+                <button onClick={() => {handleEmailCopy(email)}} className="text-sm text-left hover:underline">
                   {email}
                 </button>
               </li>
               <li className="flex items-center gap-3">
                 <FiMail size={18} />
-                <button onClick={handleEmailCopy} className="text-sm text-left hover:underline">
+                <button onClick={() => {handleEmailCopy(email2)}} className="text-sm text-left hover:underline">
                   {email2}
                 </button>
               </li>
